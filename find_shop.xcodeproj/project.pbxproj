@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		241F400E2427E114001547F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241F400C2427E114001547F6 /* Main.storyboard */; };
 		241F40102427E117001547F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241F400F2427E117001547F6 /* Assets.xcassets */; };
 		241F40132427E117001547F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241F40112427E117001547F6 /* LaunchScreen.storyboard */; };
+		241F40A124323DD7001547F6 /* Top_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F40A024323DD7001547F6 /* Top_ViewController.swift */; };
+		D6AB04AF08B7C59E96D6BBF9 /* Pods_find_shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5BAF8E5D1EACA1FCDFA3D /* Pods_find_shop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		241F400F2427E117001547F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241F40122427E117001547F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		241F40142427E117001547F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		241F40A024323DD7001547F6 /* Top_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top_ViewController.swift; sourceTree = "<group>"; };
+		9CC9D422F51E342D9531E8F2 /* Pods-find_shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-find_shop.debug.xcconfig"; path = "Target Support Files/Pods-find_shop/Pods-find_shop.debug.xcconfig"; sourceTree = "<group>"; };
+		BFE5BAF8E5D1EACA1FCDFA3D /* Pods_find_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_find_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBDD70B71936674C190AB57 /* Pods-find_shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-find_shop.release.xcconfig"; path = "Target Support Files/Pods-find_shop/Pods-find_shop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AB04AF08B7C59E96D6BBF9 /* Pods_find_shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				241F40052427E114001547F6 /* find_shop */,
 				241F40042427E114001547F6 /* Products */,
+				B9A08C3812F5A17737A0413B /* Pods */,
+				2AE1167507D992E5BC219214 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +68,30 @@
 				241F40062427E114001547F6 /* AppDelegate.swift */,
 				241F40082427E114001547F6 /* SceneDelegate.swift */,
 				241F400A2427E114001547F6 /* ViewController.swift */,
+				241F40A024323DD7001547F6 /* Top_ViewController.swift */,
 				241F400C2427E114001547F6 /* Main.storyboard */,
 				241F400F2427E117001547F6 /* Assets.xcassets */,
 				241F40112427E117001547F6 /* LaunchScreen.storyboard */,
 				241F40142427E117001547F6 /* Info.plist */,
 			);
 			path = find_shop;
+			sourceTree = "<group>";
+		};
+		2AE1167507D992E5BC219214 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFE5BAF8E5D1EACA1FCDFA3D /* Pods_find_shop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9A08C3812F5A17737A0413B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CC9D422F51E342D9531E8F2 /* Pods-find_shop.debug.xcconfig */,
+				FEBDD70B71936674C190AB57 /* Pods-find_shop.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 241F40172427E117001547F6 /* Build configuration list for PBXNativeTarget "find_shop" */;
 			buildPhases = (
+				B29B0731CDAC8D3859ED3786 /* [CP] Check Pods Manifest.lock */,
 				241F3FFF2427E114001547F6 /* Sources */,
 				241F40002427E114001547F6 /* Frameworks */,
 				241F40012427E114001547F6 /* Resources */,
+				19DF9203C19E254083D551F8 /* [CP] Copy Pods Resources */,
+				E73FC96BE8546B7B4BB2C393 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,11 +163,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19DF9203C19E254083D551F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-find_shop/Pods-find_shop-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-find_shop/Pods-find_shop-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-find_shop/Pods-find_shop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B29B0731CDAC8D3859ED3786 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-find_shop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E73FC96BE8546B7B4BB2C393 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-find_shop/Pods-find_shop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-find_shop/Pods-find_shop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-find_shop/Pods-find_shop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		241F3FFF2427E114001547F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241F40A124323DD7001547F6 /* Top_ViewController.swift in Sources */,
 				241F400B2427E114001547F6 /* ViewController.swift in Sources */,
 				241F40072427E114001547F6 /* AppDelegate.swift in Sources */,
 				241F40092427E114001547F6 /* SceneDelegate.swift in Sources */,
@@ -282,6 +372,7 @@
 		};
 		241F40182427E117001547F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC9D422F51E342D9531E8F2 /* Pods-find_shop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +390,7 @@
 		};
 		241F40192427E117001547F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEBDD70B71936674C190AB57 /* Pods-find_shop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
