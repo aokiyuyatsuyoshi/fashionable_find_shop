@@ -1,22 +1,52 @@
-# Name
- 
- find_shop.xcworkspace
- 
-# DEMO
- 
-GoogleMapSdk、yahooローカルサーチAPIを使用して現在地からの距離、そして表示したい店を選択し
-googlemap上に表示する。
- 現段階ではスターバックス、ガソリンスタンド、タリーズコーヒーなどが選択可能。
-# Features
-ライブラリとしてUIKit,GoogleMaps,Alamofire,SwiftyJSON,CoreLocationを使用
+# 簡易仕様書（例）
+### 作者
+青木優弥
+### アプリ名
+find_shop
 
-# Note
-XcodeプロジェクトなのでMacOSでしか動作しない。
+#### コンセプト
+おしゃれに楽しもう　あなたの生活
+
+#### こだわったポイント
+　とにかくお洒落なデザインに拘りました。
+　そして多くの人が使い慣れているGoogleMapを使用することで
+使ってもらいやすいデザインにしました。
+　現在地からの半径を指定することによってユーザの移動も考えた
+システム設計を目指しました。
+
+### 公開したアプリの URL（Store にリリースしている場合）
+https://apps.apple.com/jp/app/xxxx
+
+### 該当プロジェクトのリポジトリ URL（GitHub,GitLab など Git ホスティングサービスを利用されている場合）
+https://github.com/aokiyuyatsuyoshi/fashionable_find_shop
+
+## 開発環境
+### 開発環境
+Version 11.3.1
+
+### 開発言語
+Swift 5.1.3
+
+## 動作対象端末・OS
+### 動作対象OS
+ios 13.3
+
+## アプリケーション機能
+
+### 機能一覧
+
+- 店舗選択 :　YahooローカルサーチAPIを使用して6つのジャンルから店舗を取得する
+- 距離選択 :　現在地からの距離を選択できる
+- マップ上に表示 : GoogleMap上に各店舗の情報を表示する。
 
 
-# Author
-Yuya Aoki
+### 画面一覧
+- 検索画面 ：店を選択し、現在地から表示する半径を選択する。
+- 結果画面 ：GoogleMap上に検索条件に当てはまる店舗を表示する。
 
-# License
-Yuya Aoki
+### 使用しているAPI,SDK,ライブラリなど
+- GoogleMaps SDK for ios
+- Yahooローカルサーチ API
 
+### アドバイスして欲しいポイント
+飲食店の一覧リストを使いやすく、見やすくしたい。
