@@ -18,34 +18,41 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
     //　↓大阪駅付近の緯度経度
     var lat: Double = 34.7024
     var lon: Double = 135.4959
-    //　↑大阪駅付近の緯度経度
+    //エラーが起きた際にメッセージを表示するラベル
+    @IBOutlet weak var Error_title: UILabel!
     //Top_ViewControllerから代入される変数
     var selected_shop : String = ""
     var selected_distance : Int = 0
-
+    func shop_list(shop : String){
+        let urlString : String =  shop.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        selected_shop = urlString
+    }
     override func viewDidLoad() {
-//        super.viewDidLoad()
+        super.viewDidLoad()
         //公式ドキュメントより　大阪駅（現在地）にカメラを当てる
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 14.0)
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 13.0)
         let mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
         view.addSubview(mapView)
+        //最背面でマップを表示
+        self.view.sendSubviewToBack(mapView)
         //現在地を表示
         mapView.isMyLocationEnabled = true
         //下記に記載　selected_shopとselected_distanceの値を決めます。
         decide_shop()
+        //店が選択されていない場合必ずHTTP通信が失敗するようにする
+        if(selected_shop==""){
+            selected_shop = "%%&"
+        }
         //ヤフーローカルサーチAPI
-       let url="https://map.yahooapis.jp/search/local/V1/localSearch?cid=d8a23e9e64a4c817227ab09858bc1330&lat=" + String(lat)+"&lon="+String(lon)+"&dist="+String(selected_distance)+"&query="+selected_shop+"&appid=dj00aiZpPXlhZnRwSWY4TE8wbiZzPWNvbnN1bWVyc2VjcmV0Jng9NDU-&output=json"
-    
+       let url="https://map.yahooapis.jp/search/local/V1/localSearch?cid=d8a23e9e64a4c817227ab09858bc1330&lat=" + String(lat)+"&lon="+String(lon)+"&dist="+String(selected_distance)+"&query="+selected_shop+"&appid=dj00aiZpPXlhZnRwSWY4TE8wbiZzPWNvbnN1bWVyc2VjcmV0Jng9NDU-&output=json&results=100"
+        print(url)
         //Http通信を行います
         AF.request(url).responseJSON{ response in
             switch response.result{
             case .success(let value):
-
             let get_json = JSON(value)
             let get_feature = get_json["Feature"]
-            // If json is .Dictionary
             for (_,subJson):(String, JSON) in get_feature {
-               // Do something you want
                 print(subJson["Name"])
                 print(subJson["Property"]["Address"])
                 print(subJson["Geometry"]["Coordinates"])
@@ -63,57 +70,56 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
                 marker.snippet = address
                 marker.map = mapView
             }
-
            case .failure(_):
-            print("error is occured")
+            //失敗した際にラベルにエラーメッセージを表示する。
+            self.Error_title.text = "Error is occured.perhaps you didn't select any shop."
+            self.Error_title.backgroundColor = UIColor.green
             }
     }
     }
-    // 位置情報を取得・更新するたびに呼ばれる
-       func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-           let location = locations.first
-           let latitude =  location?.coordinate.latitude
-           let longitude = location?.coordinate.longitude
-           print("latitude: \(latitude!)\n longitude: \(longitude!)")
-       }
+    // 位置情報を取得・更新するたびに呼ばれる　シミュレータ上では動作しません
+//     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//            if let myLastLocation = locations.first {
+//                lat = myLastLocation.coordinate.latitude
+//                lon = myLastLocation.coordinate.longitude
+//            }
+//        }
     //選択した店
     func decide_shop(){
         if(selected_shop == "スターバックス"){
-                  selected_shop="%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9"
+            shop_list(shop: "スターバックス")
         }
         else if(selected_shop == "コンビニ"){
-            selected_shop="%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B"
+            shop_list(shop: "コンビニ")
         }
         else if(selected_shop == "ガソリンスタンド"){
-                   selected_shop="%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89"
+            shop_list(shop: "ガソリンスタンド")
         }
         else if(selected_shop == "バー"){
-                    selected_shop = "Bar"
+            shop_list(shop: "バー")
         }
         else if(selected_shop == "ラーメン"){
-                                 selected_shop = "%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3"
+            shop_list(shop: "ラーメン")
         }
         else if(selected_shop == "タリーズコーヒー"){
-                                 selected_shop = "%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC"
+            shop_list(shop: "タリーズコーヒー")
         }
-        
+    
         if(selected_distance == 0){
             selected_distance = 2
         }
-        if(selected_distance == 1){
+        else if(selected_distance == 1){
                   selected_distance = 5
         }
-        if(selected_distance == 2){
+        else if(selected_distance == 2){
                   selected_distance = 8
         }
-        if(selected_distance == 3){
+        else if(selected_distance == 3){
                 selected_distance = 10
         }
-        if(selected_distance == 4){
+        else if(selected_distance == 4){
                   selected_distance = 20
         }
-        
-        
     }
    
 }

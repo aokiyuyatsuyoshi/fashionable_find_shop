@@ -6,8 +6,17 @@
  
 GoogleMapSdk、yahooローカルサーチAPIを使用して現在地からの距離、そして表示したい店を選択し
 googlemap上に表示する。
- 
+ 現段階ではスターバックス、ガソリンスタンド、タリーズコーヒーなどが選択可能。
 # Features
+ライブラリとしてUIKit,GoogleMaps,Alamofire,SwiftyJSON,CoreLocationを使用
 
-現在地取得に失敗しており現在地を大阪駅付近にセットしている。
+# Note
+XcodeプロジェクトなのでMacOSでしか動作しない。
+
+
+# Author
+Yuya Aoki
+
+# License
+Yuya Aoki
 
