@@ -1,4 +1,4 @@
-# 簡易仕様書（例）
+# 仕様書
 ### 作者
 青木優弥
 ### アプリ名
@@ -14,8 +14,6 @@ find_shop
 　現在地からの半径を指定することによってユーザの移動も考えた
 システム設計を目指しました。
 
-### 公開したアプリの URL（Store にリリースしている場合）
-https://apps.apple.com/jp/app/xxxx
 
 ### 該当プロジェクトのリポジトリ URL（GitHub,GitLab など Git ホスティングサービスを利用されている場合）
 https://github.com/aokiyuyatsuyoshi/fashionable_find_shop
