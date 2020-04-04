@@ -13,6 +13,7 @@ class Top_ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
     //pickerにセットする配列
     var distance_data = ["2km","5km","8km","10km","20km"]
     var select_shop : String = ""
+    var shop_select_array = ["スターバックス","コンビニ","ガソリンスタンド","バー","ラーメン","タリーズコーヒー"]
     //各ボタン
     @IBOutlet weak var starbuck_button: UIButton!
     @IBOutlet weak var convenience_store_button: UIButton!
@@ -100,26 +101,17 @@ class Top_ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
            if(segue.identifier == "result_segue"){
                let next: ViewController = segue.destination as! ViewController
                 //ViewControllerのselected_distanceにはdistance(これはpicker)の順番を代入
-               next.selected_distance = distance.selectedRow(inComponent:0)
+               next.picker_selected_distance = distance.selectedRow(inComponent:0)
+            print(distance.selectedRow(inComponent: 0))
             //各店舗情報をselected_shopへ引き継ぐ
-            
-            if(select_shop=="スターバックス"){
-                next.selected_shop = "スターバックス"
-            }
-            else if(select_shop=="コンビニ"){
-                next.selected_shop = "コンビニ"
-            }
-            else if(select_shop=="ガソリンスタンド"){
-                next.selected_shop = "ガソリンスタンド"
-            }
-            else if(select_shop=="バー"){
-                next.selected_shop = "バー"
-            }
-            else if(select_shop=="ラーメン"){
-                next.selected_shop = "ラーメン"
-            }
-            else if(select_shop=="タリーズコーヒー"){
-                next.selected_shop = "タリーズコーヒー"
+            var  counter : Int = 0
+            while counter < shop_select_array.count{
+                if(select_shop == shop_select_array[counter]){
+                    next.selected_shop = shop_select_array[counter]
+                    print("pre.flag")
+                    print(shop_select_array[counter])
+                }
+                counter = counter + 1
             }
               
            }

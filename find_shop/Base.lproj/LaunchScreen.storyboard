@@ -51,7 +51,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Cocktail">
                                         <attributes>
-                                            <font key="NSFont" size="27" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="27"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -68,7 +68,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="StarBucks">
                                         <attributes>
-                                            <font key="NSFont" size="27" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="27"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -81,7 +81,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Tully's coffee">
                                         <attributes>
-                                            <font key="NSFont" size="27" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="27"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
